@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -1144,7 +1145,7 @@ function openProduct(id) {
   const p = products.find(x => x.id === id);
   if (!p) return;
   document.getElementById('modal-body').innerHTML = `
-    <div class="product-img">${(p.imgUrl||p.imgData) ? `<img src="${p.imgUrl||p.imgData}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover">` : (p.emoji||'🎮')}</div>
+    <div style="width:100%;border-radius:10px;overflow:hidden;margin-bottom:1.25rem">${(p.imgUrl||p.imgData) ? `<img src="${p.imgUrl||p.imgData}" alt="${p.name}" style="width:100%;height:auto;display:block;object-fit:contain">` : `<div class="product-img" style="margin-bottom:0">${p.emoji||'🎮'}</div>`}</div>
     <div class="modal-game-label">${p.gameLabel||''}</div>
     <div class="modal-title">${p.name}</div>
     <div class="modal-desc">${p.desc||''}</div>
